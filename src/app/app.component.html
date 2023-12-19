@@ -1,0 +1,23 @@
+<div class="container">
+  <nav>
+    <table>
+      <tr>
+        <td class="p-2" *ngFor="let action of actions">
+          <button
+            (click)="setActionCourante(action)"
+            [class]="
+              action == actionCourante
+                ? 'btn btn-success'
+                : 'btn btn-outline-success'
+            "
+            routerLink="{{ action.route }}"
+          >
+          {{ action.title }}
+            <i [class]="action.icone"></i>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </nav>
+</div>
+<router-outlet> </router-outlet>
